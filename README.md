@@ -1,5 +1,7 @@
 # Integers representable by $\lbrace 7,2\rbrace$-antichains have positive lower density
 
+> **Update (2026-09-29).** The same method, extended with *viable sets* of states (needed for congruence obstructions), also proves positive lower density for $(p,q)=(4,3)$, with a Lean reduction for general coprime bases. See [`4-3/`](4-3/README.md).
+
 *Jean-Roch Bécart, using Claude Opus 5.5 (Anthropic) via Claude Code. Draft, 2026-09-29.*
 
 *Status: computer-assisted proof. The reduction (certificate ⇒ positive lower density) is formalized in Lean 4 /

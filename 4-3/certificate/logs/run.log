@@ -1,0 +1,28 @@
+B=4 Q=3 s=2 D=14 window=16 M=16 states=268435456 H=18 slack=12 chains=137 uncovered=5/16 flat=2.2727 need<2.52372
+viable pass 0: removed 5592405, alive 178956971 of 268435456
+viable pass 1: removed 1, alive 178956970 of 268435456
+viable pass 2: removed 0, alive 178956970 of 268435456
+it=0 g in [0.00000, 8.00000]  ratio-to-need [0.0000, 3.1699]
+it=1 g in [0.00000, 8.00000]  ratio-to-need [0.0000, 3.1699]
+it=2 g in [0.00000, 8.00000]  ratio-to-need [0.0000, 3.1699]
+it=3 g in [0.00000, 8.00000]  ratio-to-need [0.0000, 3.1699]
+it=4 g in [0.00000, 8.00000]  ratio-to-need [0.0000, 3.1699]
+it=5 g in [0.00000, 8.00000]  ratio-to-need [0.0000, 3.1699]
+it=6 g in [0.00000, 5.33333]  ratio-to-need [0.0000, 2.1133]
+it=7 g in [0.85762, 3.68490]  ratio-to-need [0.3398, 1.4601]
+it=8 g in [1.74971, 3.01780]  ratio-to-need [0.6933, 1.1958]
+it=9 g in [2.12532, 2.80267]  ratio-to-need [0.8421, 1.1105]
+it=10 g in [2.31534, 2.75033]  ratio-to-need [0.9174, 1.0898]
+it=11 g in [2.37625, 2.68013]  ratio-to-need [0.9416, 1.0620]
+it=12 g in [2.41667, 2.63340]  ratio-to-need [0.9576, 1.0435]
+it=13 g in [2.43575, 2.59053]  ratio-to-need [0.9651, 1.0265]
+it=14 g in [2.47967, 2.55508]  ratio-to-need [0.9825, 1.0124]
+it=15 g in [2.49086, 2.53701]  ratio-to-need [0.9870, 1.0053]
+it=16 g in [2.50024, 2.52621]  ratio-to-need [0.9907, 1.0010]
+it=17 g in [2.50688, 2.52142]  ratio-to-need [0.9933, 0.9991]
+it=18 g in [2.51014, 2.51954]  ratio-to-need [0.9946, 0.9983]
+it=19 g in [2.51182, 2.51809]  ratio-to-need [0.9953, 0.9978]
+it=20 g in [2.51241, 2.51656]  ratio-to-need [0.9955, 0.9972]
+it=21 g in [2.51334, 2.51550]  ratio-to-need [0.9959, 0.9967]
+it=22 g in [2.51366, 2.51502]  ratio-to-need [0.9960, 0.9966]
+RUNDONE

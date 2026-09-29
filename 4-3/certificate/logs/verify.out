@@ -1,0 +1,2 @@
+B=4 Q=3 s=2 D=14 H=18 slack=12 |W|=178956970 (0.666667 of states) bad=0  GNUM=42192162 argmax=205875559  ghat=2.5148488  s*a/b=2.5217391  Q^a<B^b:1  osc(V)=42.7867  PASS=1
+VDONE
