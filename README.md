@@ -1,4 +1,4 @@
-# Integers representable by $\lbrace 7,2\rbrace $-antichains have positive lower density
+# Integers representable by $\lbrace 7,2\rbrace$-antichains have positive lower density
 
 *Jean-Roch Bécart, using Claude Opus 5.5 (Anthropic) via Claude Code. Draft, 2026-09-29.*
 
@@ -11,7 +11,7 @@ programs and the Lean code were produced by the AI under the author's direction;
 Let $p>q\ge 2$ be coprime. Call $n\ge 1$ **representable** if $n=\sum_i p^{a_i}q^{b_i}$ where no summand
 divides another. Equivalently, the exponent pairs $(a_i,b_i)$ are distinct and pairwise incomparable in the
 product order on $\mathbb N^2$. Erdős and Lewin showed that the non-representable integers form a finite set
-iff $\lbrace p,q\rbrace =\lbrace 2,3\rbrace $, and asked about their density (Erdős problem #1110). Yu and Chen showed that the representable
+iff $\lbrace p,q\rbrace =\lbrace 2,3\rbrace$, and asked about their density (Erdős problem #1110). Yu and Chen showed that the representable
 integers have density zero when $q>3$, or $q=3,\ p>6$, or $q=2,\ p>10$. For $(p,q)=(5,2)$, Ding, Li, Liu and Zhang
 (proof claim, Aug. 2026) showed positive lower density with a finite certificate modulo $2^{12}$.
 
@@ -25,7 +25,7 @@ Throughout, $\mu=\log_7 2$ and $\mathbb Z_2$ denotes the 2-adic integers, in whi
 
 ## 2. Chains, states, certificates
 
-Fix $s\ge1$ and $P=2^s$. A **chain** is a finite set $C=\lbrace (\alpha_1,\gamma_1),\dots,(\alpha_k,\gamma_k)\rbrace $ with
+Fix $s\ge1$ and $P=2^s$. A **chain** is a finite set $C=\lbrace (\alpha_1,\gamma_1),\dots,(\alpha_k,\gamma_k)\rbrace$ with
 $0\le\alpha_1<\dots<\alpha_k<s$ and $0\le\gamma_1<\dots<\gamma_k$. Its **height** is $h(C)=\gamma_k+1$ ($h(\varnothing)=0$) and
 its **value** is $v(C)=\sum_i 2^{\alpha_i}7^{-\gamma_i}\in\mathbb Z_2$.
 
@@ -40,7 +40,7 @@ This is well defined because $z\equiv v(C)\pmod P$.
 A **certificate** is a chain family together with $V:\mathcal X\to\mathbb R$ and $\hat g\in\mathbb R$ such that for every $x=(c,b)$:
 $$\frac1P\sum_{u\in\mathbb Z/P}\ \min_{C\in\mathcal C(c)}\Big[h(C)+V\big(\mathrm{next}(x,u,C)\big)\Big]\ \le\ V(x)+\hat g. \tag{$\ast$}$$
 
-**Theorem A.** If a certificate exists with $\hat g< s\mu$, then the $\lbrace 7,2\rbrace $-representable integers have positive lower
+**Theorem A.** If a certificate exists with $\hat g< s\mu$, then the $\lbrace 7,2\rbrace$-representable integers have positive lower
 density.
 
 **Theorem B (computation).** Take $s=11$, $H=10$. Let $\mathcal C(c)$ be the set of all chains with $\gamma<10$,
@@ -68,7 +68,7 @@ $$n(y)=\sum_{t<N}\ \sum_{(\alpha,\gamma)\in C_t} 2^{st+\alpha}\thinspace 7^{A-G_
 **Lemma 1.**
 (a) The exponent pairs $(st+\alpha,\ A-G_t-\gamma)$ are distinct and pairwise incomparable. If $G_N\le A$, all of them
 are $\ge0$, so $n(y)$ is representable (or $0$, which happens only for $y=0$).
-(b) If $G_N\le A$, then $n(y)\equiv 7^{A}y \pmod{2^{sN}}$. Hence $y\mapsto n(y)$ is injective on $\lbrace y: G_N(y)\le A\rbrace $.
+(b) If $G_N\le A$, then $n(y)\equiv 7^{A}y \pmod{2^{sN}}$. Hence $y\mapsto n(y)$ is injective on $\lbrace y: G_N(y)\le A\rbrace$.
 (c) $n(y)< K\thinspace 2^{sN}$ with $K=2^s7^{c^\ast+1}/(2^s7^{-\lambda}-1)$. Note $2^s 7^{-\lambda}>1$ since $\lambda<s\mu$.
 
 *Proof.* (a) Within block $t$, $\alpha$ and $\gamma$ increase together, so the 2-exponent increases while the
