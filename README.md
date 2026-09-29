@@ -1,4 +1,4 @@
-# Integers representable by $\{7,2\}$-antichains have positive lower density
+# Integers representable by $\lbrace 7,2\rbrace $-antichains have positive lower density
 
 *Jean-Roch Bécart, using Claude Opus 5.5 (Anthropic) via Claude Code. Draft, 2026-09-29.*
 
@@ -11,12 +11,12 @@ programs and the Lean code were produced by the AI under the author's direction;
 Let $p>q\ge 2$ be coprime. Call $n\ge 1$ **representable** if $n=\sum_i p^{a_i}q^{b_i}$ where no summand
 divides another. Equivalently, the exponent pairs $(a_i,b_i)$ are distinct and pairwise incomparable in the
 product order on $\mathbb N^2$. Erdős and Lewin showed that the non-representable integers form a finite set
-iff $\{p,q\}=\{2,3\}$, and asked about their density (Erdős problem #1110). Yu and Chen showed that the representable
+iff $\lbrace p,q\rbrace =\lbrace 2,3\rbrace $, and asked about their density (Erdős problem #1110). Yu and Chen showed that the representable
 integers have density zero when $q>3$, or $q=3,\ p>6$, or $q=2,\ p>10$. For $(p,q)=(5,2)$, Ding, Li, Liu and Zhang
 (proof claim, Aug. 2026) showed positive lower density with a finite certificate modulo $2^{12}$.
 
 **Theorem.** For $(p,q)=(7,2)$ the representable integers have positive lower density:
-$\liminf_{x\to\infty} x^{-1}\mathrm{card}\{n\le x:\ n \text{ representable}\}>0.$
+$\liminf_{x\to\infty} x^{-1}\mathrm{card}\lbrace n\le x:\ n \text{ representable}\rbrace >0.$
 
 The proof has two parts. Theorem A is a general criterion: a finite "potential certificate" implies positive lower
 density. Theorem B, checked by computer, says that such a certificate exists for $s=11$.
@@ -25,7 +25,7 @@ Throughout, $\mu=\log_7 2$ and $\mathbb Z_2$ denotes the 2-adic integers, in whi
 
 ## 2. Chains, states, certificates
 
-Fix $s\ge1$ and $P=2^s$. A **chain** is a finite set $C=\{(\alpha_1,\gamma_1),\dots,(\alpha_k,\gamma_k)\}$ with
+Fix $s\ge1$ and $P=2^s$. A **chain** is a finite set $C=\lbrace (\alpha_1,\gamma_1),\dots,(\alpha_k,\gamma_k)\rbrace $ with
 $0\le\alpha_1<\dots<\alpha_k<s$ and $0\le\gamma_1<\dots<\gamma_k$. Its **height** is $h(C)=\gamma_k+1$ ($h(\varnothing)=0$) and
 its **value** is $v(C)=\sum_i 2^{\alpha_i}7^{-\gamma_i}\in\mathbb Z_2$.
 
@@ -40,7 +40,7 @@ This is well defined because $z\equiv v(C)\pmod P$.
 A **certificate** is a chain family together with $V:\mathcal X\to\mathbb R$ and $\hat g\in\mathbb R$ such that for every $x=(c,b)$:
 $$\frac1P\sum_{u\in\mathbb Z/P}\ \min_{C\in\mathcal C(c)}\Big[h(C)+V\big(\mathrm{next}(x,u,C)\big)\Big]\ \le\ V(x)+\hat g. \tag{$\ast$}$$
 
-**Theorem A.** If a certificate exists with $\hat g< s\mu$, then the $\{7,2\}$-representable integers have positive lower
+**Theorem A.** If a certificate exists with $\hat g< s\mu$, then the $\lbrace 7,2\rbrace $-representable integers have positive lower
 density.
 
 **Theorem B (computation).** Take $s=11$, $H=10$. Let $\mathcal C(c)$ be the set of all chains with $\gamma<10$,
@@ -60,16 +60,16 @@ Given $y\in\mathbb Z/2^{sN}$, set $z_0=y$ and $G_0=0$. For $t=0,1,\dots,N-1$ def
 
 * $c_t=z_t \bmod P$. When $t\le N-2$, $X_t=(c_t,\lfloor z_t/P\rfloor \bmod P)$. When $t\le N-3$, $u_t=\lfloor z_t/P^2\rfloor \bmod P$.
 * $C_t=\pi(X_t,u_t)$ if $t\le N-3$. Otherwise $C_t$ is a fixed element of $\mathcal C(c_t)$.
-* $G_{t+1}=\max\big(G_t+h(C_t),\ \lceil (t+1)\lambda\rceil\big)$ and $z_{t+1}=7^{G_{t+1}-G_t}\,(z_t-v(C_t))/P$.
+* $G_{t+1}=\max\big(G_t+h(C_t),\ \lceil (t+1)\lambda\rceil\big)$ and $z_{t+1}=7^{G_{t+1}-G_t}\thinspace (z_t-v(C_t))/P$.
 
 Finally set
-$$n(y)=\sum_{t<N}\ \sum_{(\alpha,\gamma)\in C_t} 2^{st+\alpha}\,7^{A-G_t-\gamma}.$$
+$$n(y)=\sum_{t<N}\ \sum_{(\alpha,\gamma)\in C_t} 2^{st+\alpha}\thinspace 7^{A-G_t-\gamma}.$$
 
 **Lemma 1.**
 (a) The exponent pairs $(st+\alpha,\ A-G_t-\gamma)$ are distinct and pairwise incomparable. If $G_N\le A$, all of them
 are $\ge0$, so $n(y)$ is representable (or $0$, which happens only for $y=0$).
-(b) If $G_N\le A$, then $n(y)\equiv 7^{A}y \pmod{2^{sN}}$. Hence $y\mapsto n(y)$ is injective on $\{y: G_N(y)\le A\}$.
-(c) $n(y)< K\,2^{sN}$ with $K=2^s7^{c^\ast+1}/(2^s7^{-\lambda}-1)$. Note $2^s 7^{-\lambda}>1$ since $\lambda<s\mu$.
+(b) If $G_N\le A$, then $n(y)\equiv 7^{A}y \pmod{2^{sN}}$. Hence $y\mapsto n(y)$ is injective on $\lbrace y: G_N(y)\le A\rbrace $.
+(c) $n(y)< K\thinspace 2^{sN}$ with $K=2^s7^{c^\ast+1}/(2^s7^{-\lambda}-1)$. Note $2^s 7^{-\lambda}>1$ since $\lambda<s\mu$.
 
 *Proof.* (a) Within block $t$, $\alpha$ and $\gamma$ increase together, so the 2-exponent increases while the
 7-exponent decreases. Across blocks $t<t'$, the 2-exponent satisfies $st'+\alpha'\ge s(t+1)>st+\alpha$. The 7-exponent
@@ -78,14 +78,14 @@ Nonnegativity: $A-G_t-\gamma\ge A-G_{t+1}\ge A-G_N$.
 (b) By induction on $t$: $y\equiv\sum_{j<t}2^{sj}7^{-G_j}v(C_j)+2^{st}7^{-G_t}z_t \pmod{2^{sN}}$. The step is
 $2^{s(t+1)}7^{-G_{t+1}}z_{t+1}=2^{st}7^{-G_t}(z_t-v(C_t))$. At $t=N$ this gives $7^{-A}n(y)\equiv y$.
 (c) Since $\sum_{\alpha<s}2^{st+\alpha}<2^{s(t+1)}$ and $G_t\ge\lceil t\lambda\rceil\ge t\lambda$, we get
-$n<7^A2^s\sum_{t<N}(2^s7^{-\lambda})^t<7^A 2^s\,\frac{(2^s7^{-\lambda})^N}{2^s7^{-\lambda}-1}$. Finally use $7^{A-N\lambda}\le 7^{c^\ast+1}$. $\square$
+$n<7^A2^s\sum_{t<N}(2^s7^{-\lambda})^t<7^A 2^s\thinspace \frac{(2^s7^{-\lambda})^N}{2^s7^{-\lambda}-1}$. Finally use $7^{A-N\lambda}\le 7^{c^\ast+1}$. $\square$
 
 ## 4. Most $y$ are admissible
 
 Let $y$ be uniform on $\mathbb Z/2^{sN}$. Write $h_t=h(C_t)$ and $E_t=G_t-t\lambda\ge0$. Call step $t$ **padded** if
 $G_{t+1}>G_t+h_t$. Then:
 
-1. $E_{t+1}\le\max(E_t+h_t-\lambda,\,1)\le E_t+H$, using $\lceil a\rceil-a<1$.
+1. $E_{t+1}\le\max(E_t+h_t-\lambda,\thinspace 1)\le E_t+H$, using $\lceil a\rceil-a<1$.
 2. If step $t\le N-3$ is unpadded, then $E_{t+1}=E_t+h_t-\lambda$ and $X_{t+1}=\mathrm{next}(X_t,u_t,C_t)$. The second claim holds
    because $z_t \bmod P^3=c_t+Pb_t+P^2u_t$.
 3. **Fresh look-ahead.** Let $\mathcal F_t=\sigma(y \bmod 2^{s(t+2)})$. The quantities $C_0,\dots,C_{t-1}$, $G_0,\dots,G_t$ and $X_t$ are
@@ -97,19 +97,19 @@ $G_{t+1}>G_t+h_t$. Then:
 **Lemma 2.** There is $c_0$, independent of $N$, with $\Pr[E_{N-2}>c_0]\le\tfrac12$.
 
 *Proof.* Normalise $V\ge0$ and let $\mathrm{osc}=\max V$. Put $R=H+\mathrm{osc}+\hat g$, $\theta=\min(1/R,\ \delta/(2R^2))$ and
-$\Psi_t=\exp\!\big(\theta(E_t+V(X_t))\big)$ for $t\le N-2$. Let
+$\Psi_t=\exp\negthinspace \big(\theta(E_t+V(X_t))\big)$ for $t\le N-2$. Let
 $Z_t=h_t+V(\mathrm{next}(X_t,u_t,C_t))-V(X_t)-\hat g$. Then $|Z_t|\le R$. By $(\ast)$, fact 3 and the choice of $\pi$,
 $\mathbb E[Z_t\mid\mathcal F_t]\le0$. Facts 1 and 2 give, for $t\le N-3$,
-$$\Psi_{t+1}\ \le\ \Psi_t\,e^{-\theta\delta}\,e^{\theta Z_t}\ +\ e^{\theta(1+\mathrm{osc})}.$$
+$$\Psi_{t+1}\ \le\ \Psi_t\thinspace e^{-\theta\delta}\thinspace e^{\theta Z_t}\ +\ e^{\theta(1+\mathrm{osc})}.$$
 The first term is the unpadded case, where it holds with equality. On a padded step $E_{t+1}<1$, so the second term applies.
 Since $e^w\le1+w+w^2$ for $|w|\le1$ and $\theta R\le1$, we have $\mathbb E[e^{\theta Z_t}\mid\mathcal F_t]\le1+\theta^2R^2\le e^{\theta^2R^2}$.
-Therefore $\mathbb E\Psi_{t+1}\le\rho\,\mathbb E\Psi_t+e^{\theta(1+\mathrm{osc})}$, where $\rho=e^{-\theta\delta+\theta^2R^2}\le e^{-\theta\delta/2}<1$.
-Hence $\mathbb E\Psi_t\le M_0:=e^{\theta\,\mathrm{osc}}+e^{\theta(1+\mathrm{osc})}/(1-\rho)$ for all $t\le N-2$.
+Therefore $\mathbb E\Psi_{t+1}\le\rho\thinspace \mathbb E\Psi_t+e^{\theta(1+\mathrm{osc})}$, where $\rho=e^{-\theta\delta+\theta^2R^2}\le e^{-\theta\delta/2}<1$.
+Hence $\mathbb E\Psi_t\le M_0:=e^{\theta\thinspace \mathrm{osc}}+e^{\theta(1+\mathrm{osc})}/(1-\rho)$ for all $t\le N-2$.
 Markov's inequality gives $\Pr[E_{N-2}>c_0]\le M_0e^{-\theta c_0}=\tfrac12$ for $c_0=\theta^{-1}\ln(2M_0)$. $\square$
 
 *Proof of Theorem A.* Take $c^\ast=\lceil c_0\rceil+2H$. By fact 1, $E_N\le E_{N-2}+2H$. With probability $\ge\frac12$
 this gives $G_N=E_N+N\lambda\le A$. By Lemma 1, at least $2^{sN-1}-1$ distinct representable integers lie below
-$K2^{sN}$, for every $N\ge3$. For $K2^{sN}\le x<K2^{s(N+1)}$ we get $\mathrm{card}\{n\le x\}\ge 2^{sN-1}-1\ge x/(2^{s+1}K)-1$. $\square$
+$K2^{sN}$, for every $N\ge3$. For $K2^{sN}\le x<K2^{s(N+1)}$ we get $\mathrm{card}\lbrace n\le x\rbrace \ge 2^{sN-1}-1\ge x/(2^{s+1}K)-1$. $\square$
 
 The argument is uniform in the pair: it applies verbatim to any $(p,2)$, with $7$ replaced by $p$. After exchanging the roles of the
 bases it also applies to any $(p,q)$ with $P=q^s$, provided the chain family covers every residue.
@@ -133,7 +133,7 @@ bases it also applies to any $(p,q)$ with $P=q^s$, provided the chain family cov
   classes and injectivity. End-to-end constructions at $s=11$ over up to 900 blocks gave antichains with $n\equiv 7^Ay$ and
   bounded excess.
 
-Margin: $\delta=\lambda-\hat g\approx0.0131$ per 11-bit block, i.e. $0.35497$ vs. $\mu=0.35621$ per bit, about $0.35\%$.
+Margin: $\delta=\lambda-\hat g\approx0.0131$ per 11-bit block, i.e. $0.35497$ vs. $\mu=0.35621$ per bit, about 0.35%.
 
 ## 6. Remarks
 
