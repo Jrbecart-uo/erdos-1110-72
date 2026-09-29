@@ -16,7 +16,7 @@ integers have density zero when $q>3$, or $q=3,\ p>6$, or $q=2,\ p>10$. For $(p,
 (proof claim, Aug. 2026) showed positive lower density with a finite certificate modulo $2^{12}$.
 
 **Theorem.** For $(p,q)=(7,2)$ the representable integers have positive lower density:
-$\liminf_{x\to\infty} x^{-1}\#\{n\le x:\ n \text{ representable}\}>0.$
+$\liminf_{x\to\infty} x^{-1}\mathrm{card}\{n\le x:\ n \text{ representable}\}>0.$
 
 The proof has two parts. Theorem A is a general criterion: a finite "potential certificate" implies positive lower
 density. Theorem B, checked by computer, says that such a certificate exists for $s=11$.
@@ -109,7 +109,7 @@ Markov's inequality gives $\Pr[E_{N-2}>c_0]\le M_0e^{-\theta c_0}=\tfrac12$ for 
 
 *Proof of Theorem A.* Take $c^\ast=\lceil c_0\rceil+2H$. By fact 1, $E_N\le E_{N-2}+2H$. With probability $\ge\frac12$
 this gives $G_N=E_N+N\lambda\le A$. By Lemma 1, at least $2^{sN-1}-1$ distinct representable integers lie below
-$K2^{sN}$, for every $N\ge3$. For $K2^{sN}\le x<K2^{s(N+1)}$ we get $\#\{n\le x\}\ge 2^{sN-1}-1\ge x/(2^{s+1}K)-1$. $\square$
+$K2^{sN}$, for every $N\ge3$. For $K2^{sN}\le x<K2^{s(N+1)}$ we get $\mathrm{card}\{n\le x\}\ge 2^{sN-1}-1\ge x/(2^{s+1}K)-1$. $\square$
 
 The argument is uniform in the pair: it applies verbatim to any $(p,2)$, with $7$ replaced by $p$. After exchanging the roles of the
 bases it also applies to any $(p,q)$ with $P=q^s$, provided the chain family covers every residue.
